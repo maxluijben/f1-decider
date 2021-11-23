@@ -14,51 +14,51 @@ const ptsLadder = {
 }
 
 class Stats {
-  constructor(newRound, prevRound, racePtsCell) {
+  constructor(prevRound, thisRound, nextRound) {
 
-    this.newRound = newRound
+    this.thisRound = thisRound
     this.prevRound = prevRound
-    this.racePtsCell = racePtsCell
+    this.nextRound = nextRound
 
-    this.prevRound = {
+    this.prevRoundStats = {
       wcPts : {
-        VER : 351.5, 
-        HAM : 343.5, 
+        VER : parseFloat(document.querySelector(`#${this.prevRound} #wcPtsVER`).innerHTML), 
+        HAM : parseFloat(document.querySelector(`#${this.prevRound} #wcPtsHAM`).innerHTML),
       },
     }
 
-    this.newRound = {
+    this.thisRoundStats = {
       racePos : { 
-        VER : document.querySelector('#racePosSauVER').value,
-        HAM : document.querySelector('#racePosSauHAM').value,
+        VER : document.querySelector(`#${this.thisRound} #racePosVER`).value,
+        HAM : document.querySelector(`#${this.thisRound} #racePosHAM`).value,
       },
       fastLap : {
-        VER : document.querySelector('#fastestLapSauVER').checked,
-        HAM : document.querySelector('#fastestLapSauHAM').checked,
+        VER : document.querySelector(`#${this.thisRound} #fastestLapVER`).checked,
+        HAM : document.querySelector(`#${this.thisRound} #fastestLapHAM`).checked,
       },
     }
   }
   
   get racePtsVER() {
-    if (this.newRound.fastLap.VER == true && this.newRound.racePos.VER != 11) {
-      return ptsLadder[this.newRound.racePos.VER] + 1
+    if (this.thisRoundStats.fastLap.VER == true && this.thisRoundStats.racePos.VER != 11) {
+      return ptsLadder[this.thisRoundStats.racePos.VER] + 1
     } else {
-      return ptsLadder[this.newRound.racePos.VER]
+      return ptsLadder[this.thisRoundStats.racePos.VER]
     }
   }
   get racePtsHAM() {
-    if (this.newRound.fastLap.HAM == true && this.newRound.racePos.HAM != 11) {
-      return ptsLadder[this.newRound.racePos.HAM] + 1
+    if (this.thisRoundStats.fastLap.HAM == true && this.thisRoundStats.racePos.HAM != 11) {
+      return ptsLadder[this.thisRoundStats.racePos.HAM] + 1
     } else {
-      return ptsLadder[this.newRound.racePos.HAM]
+      return ptsLadder[this.thisRoundStats.racePos.HAM]
     }
   }
 
   get prevWcPtsVER() {
-    return this.prevRound.wcPts.VER
+    return this.prevRoundStats.wcPts.VER
   }
   get prevWcPtsHAM() {
-    return this.prevRound.wcPts.HAM
+    return this.prevRoundStats.wcPts.HAM
   }
 
   get newWcPtsVER() {
@@ -69,31 +69,31 @@ class Stats {
   }
 
   printStats() {
-    document.querySelector("#racePtsSauVER").innerHTML = this.racePtsVER
-    document.querySelector("#racePtsSauHAM").innerHTML = this.racePtsHAM
+    document.querySelector(`#${this.thisRound} #racePtsVER`).innerHTML = this.racePtsVER
+    document.querySelector(`#${this.thisRound} #racePtsHAM`).innerHTML = this.racePtsHAM
     
-    document.querySelector("#wcPtsSauVER").innerHTML = this.newWcPtsVER
-    document.querySelector("#wcPtsSauHAM").innerHTML = this.newWcPtsHAM
+    document.querySelector(`#${this.thisRound} #wcPtsVER`).innerHTML = this.newWcPtsVER
+    document.querySelector(`#${this.thisRound} #wcPtsHAM`).innerHTML = this.newWcPtsHAM
 
     // Upcoming Round
-    document.querySelector("#wcPtsAbuVER").innerHTML = this.newWcPtsVER
-    document.querySelector("#wcPtsAbuHAM").innerHTML = this.newWcPtsHAM
+    document.querySelector(`#${this.nextRound} #wcPtsVER`).innerHTML = this.newWcPtsVER
+    document.querySelector(`#${this.nextRound} #wcPtsHAM`).innerHTML = this.newWcPtsHAM
 
     if ((this.newWcPtsVER - this.newWcPtsHAM) >= 26) {
-      document.querySelector("#wcDefSauVER").innerHTML = "Ja"
-      document.querySelector("#wcDefSauHAM").innerHTML = "Nee"
+      document.querySelector(`#${this.thisRound} #wcDefVER`).innerHTML = "Ja"
+      document.querySelector(`#${this.thisRound} #wcDefHAM`).innerHTML = "Nee"
 
       // Upcoming Round
-      document.querySelector("#wcDefAbuVER").innerHTML = "Ja"
-      document.querySelector("#wcDefAbuHAM").innerHTML = "Nee"
+      document.querySelector(`#${this.nextRound} #wcDefVER`).innerHTML = "Ja"
+      document.querySelector(`#${this.nextRound} #wcDefHAM`).innerHTML = "Nee"
 
     } else if ((this.newWcPtsVER - this.newWcPtsHAM) < 26) {
-      document.querySelector("#wcDefSauVER").innerHTML = "Onbeslist"
-      document.querySelector("#wcDefSauHAM").innerHTML = "Onbeslist"
+      document.querySelector(`#${this.thisRound} #wcDefVER`).innerHTML = "Onbeslist"
+      document.querySelector(`#${this.thisRound} #wcDefHAM`).innerHTML = "Onbeslist"
 
       // Upcoming Round
-      document.querySelector("#wcDefAbuVER").innerHTML = "Onbeslist"
-      document.querySelector("#wcDefAbuHAM").innerHTML = "Onbeslist"
+      document.querySelector(`#${this.nextRound} #wcDefVER`).innerHTML = "Onbeslist"
+      document.querySelector(`#${this.nextRound} #wcDefHAM`).innerHTML = "Onbeslist"
     }
   }
 
@@ -101,20 +101,20 @@ class Stats {
 
 
 window.addEventListener("load", function() {
-  const allStats = new Stats()
+  const allStats = new Stats("R20", "R21", "R22")
   allStats.printStats()
 })
 
-document.querySelector("#r21").addEventListener("change", function() {  
-  const allStats = new Stats()
+document.querySelector("#R21").addEventListener("change", function() {  
+  const allStats = new Stats("R20", "R21", "R22")
   allStats.printStats()
 
-  console.log('race position VER', allStats.newRound.racePos.VER);
-  console.log('race position HAM', allStats.newRound.racePos.HAM);
-  console.log('fastest lap VER', allStats.newRound.fastLap.VER);
-  console.log('fastest lap HAM', allStats.newRound.fastLap.HAM);
-  console.log('race points VER', allStats.racePtsVER);
-  console.log('race points HAM', allStats.racePtsHAM);
-  console.log('wc points VER', allStats.newWcPtsVER);
-  console.log('wc points HAM', allStats.newWcPtsHAM);
+  console.log(allStats)
+})
+
+document.querySelector("#R22").addEventListener("change", function() {  
+  const allStats = new Stats("R21", "R22", "")
+  allStats.printStats()
+
+  console.log(allStats)
 })
