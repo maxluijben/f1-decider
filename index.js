@@ -76,24 +76,30 @@ class Stats {
     document.querySelector(`#${this.thisRound} #wcPtsHAM`).innerHTML = this.newWcPtsHAM
 
     // Upcoming Round
-    document.querySelector(`#${this.nextRound} #wcPtsVER`).innerHTML = this.newWcPtsVER
-    document.querySelector(`#${this.nextRound} #wcPtsHAM`).innerHTML = this.newWcPtsHAM
+    if (this.nextRound !== '') {
+      document.querySelector(`#${this.nextRound} #wcPtsVER`).innerHTML = this.newWcPtsVER
+      document.querySelector(`#${this.nextRound} #wcPtsHAM`).innerHTML = this.newWcPtsHAM
+    }
 
     if ((this.newWcPtsVER - this.newWcPtsHAM) >= 26) {
       document.querySelector(`#${this.thisRound} #wcDefVER`).innerHTML = "Ja"
       document.querySelector(`#${this.thisRound} #wcDefHAM`).innerHTML = "Nee"
 
       // Upcoming Round
-      document.querySelector(`#${this.nextRound} #wcDefVER`).innerHTML = "Ja"
-      document.querySelector(`#${this.nextRound} #wcDefHAM`).innerHTML = "Nee"
+      if (this.nextRound !== '') {
+        document.querySelector(`#${this.nextRound} #wcDefVER`).innerHTML = "Ja"
+        document.querySelector(`#${this.nextRound} #wcDefHAM`).innerHTML = "Nee"
+      }
 
     } else if ((this.newWcPtsVER - this.newWcPtsHAM) < 26) {
       document.querySelector(`#${this.thisRound} #wcDefVER`).innerHTML = "Onbeslist"
       document.querySelector(`#${this.thisRound} #wcDefHAM`).innerHTML = "Onbeslist"
 
       // Upcoming Round
-      document.querySelector(`#${this.nextRound} #wcDefVER`).innerHTML = "Onbeslist"
-      document.querySelector(`#${this.nextRound} #wcDefHAM`).innerHTML = "Onbeslist"
+      if (this.nextRound !== '') {
+        document.querySelector(`#${this.nextRound} #wcDefVER`).innerHTML = "Onbeslist"
+        document.querySelector(`#${this.nextRound} #wcDefHAM`).innerHTML = "Onbeslist"
+      }
     }
   }
 
