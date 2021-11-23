@@ -259,32 +259,18 @@ class Stats {
     return this.racePtsHAM + this.prevWcPtsHAM
   }
 
-  get wcDefVER() {
-    if ((this.newWcPtsVER - this.newWcPtsHAM) >= 26) {
-      return "Ja"
-    } else if ((this.newWcPtsVER - this.newWcPtsHAM) < 26) {
-      return "Onbeslist"
-    } else {
-      return "Nee"
-    }
-  }
-  get wcDefHAM() {
-    if ((this.newWcPtsHAM - this.newWcPtsVER) >= 27) {
-      return "Ja"
-    } else if ((this.newWcPtsHAM - this.newWcPtsVER) < 26) {
-      return "Onbeslist"
-    } else {
-      return "Nee"
-    }
-  }
-
   printStats() {
     document.querySelector("#racePtsSauVER").innerHTML = this.racePtsVER
     document.querySelector("#racePtsSauHAM").innerHTML = this.racePtsHAM
     document.querySelector("#wcPtsSauVER").innerHTML = this.newWcPtsVER
     document.querySelector("#wcPtsSauHAM").innerHTML = this.newWcPtsHAM
-    document.querySelector("#wcDefSauVER").innerHTML = this.wcDefVER
-    document.querySelector("#wcDefSauHAM").innerHTML = this.wcDefHAM
+    if ((this.newWcPtsVER - this.newWcPtsHAM) >= 26) {
+      document.querySelector("#wcDefSauVER").innerHTML = "Ja"
+      document.querySelector("#wcDefSauHAM").innerHTML = "Nee"
+    } else if ((this.newWcPtsVER - this.newWcPtsHAM) < 26) {
+      document.querySelector("#wcDefSauVER").innerHTML = "Onbeslist"
+      document.querySelector("#wcDefSauHAM").innerHTML = "Onbeslist"
+    }
   }
 
 }
