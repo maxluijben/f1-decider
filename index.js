@@ -71,14 +71,29 @@ class Stats {
   printStats() {
     document.querySelector("#racePtsSauVER").innerHTML = this.racePtsVER
     document.querySelector("#racePtsSauHAM").innerHTML = this.racePtsHAM
+    
     document.querySelector("#wcPtsSauVER").innerHTML = this.newWcPtsVER
     document.querySelector("#wcPtsSauHAM").innerHTML = this.newWcPtsHAM
+
+    // Upcoming Round
+    document.querySelector("#wcPtsAbuVER").innerHTML = this.newWcPtsVER
+    document.querySelector("#wcPtsAbuHAM").innerHTML = this.newWcPtsHAM
+
     if ((this.newWcPtsVER - this.newWcPtsHAM) >= 26) {
       document.querySelector("#wcDefSauVER").innerHTML = "Ja"
       document.querySelector("#wcDefSauHAM").innerHTML = "Nee"
+
+      // Upcoming Round
+      document.querySelector("#wcDefAbuVER").innerHTML = "Ja"
+      document.querySelector("#wcDefAbuHAM").innerHTML = "Nee"
+
     } else if ((this.newWcPtsVER - this.newWcPtsHAM) < 26) {
       document.querySelector("#wcDefSauVER").innerHTML = "Onbeslist"
       document.querySelector("#wcDefSauHAM").innerHTML = "Onbeslist"
+
+      // Upcoming Round
+      document.querySelector("#wcDefAbuVER").innerHTML = "Onbeslist"
+      document.querySelector("#wcDefAbuHAM").innerHTML = "Onbeslist"
     }
   }
 
@@ -90,8 +105,7 @@ window.addEventListener("load", function() {
   allStats.printStats()
 })
 
-document.addEventListener("change", function() {
-
+document.querySelector("#r21").addEventListener("change", function() {  
   const allStats = new Stats()
   allStats.printStats()
 
