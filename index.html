@@ -5,54 +5,56 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>  
   <h1>Which driver will be the World Champion of 2021?</h1>
   <p>With the end of the 2021 F1 season getting closer and closer, the F1 World Championship is more exciting than ever. With this calculator you can keep on track with which driver has the best chances to become the next World Champion, Verstappen or Hamilton.</p>
-  <table class="tg" id="R20">
+  <table class="table" id="R20">
     <thead>
       <tr>
-        <th class="tg-0lax" colspan="3">Na Qatar</th>
+        <th colspan="3">Na Qatar</th>
+      </tr>
+      <tr>
+        <th scope="col">Coureur</th>
+        <th scope="col">WK punten</th>
+        <th scope="col">WK?</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td class="tg-0lax">Coureur</td>
-        <td class="tg-0lax">WK punten</td>
-        <td class="tg-0lax">WK?</td>
+        <th scope="row">Verstappen</th>
+        <td id="wcPtsVER">351.5</td>
+        <td>Onbeslist</td>
       </tr>
       <tr>
-        <td class="tg-0lax">Verstappen</td>
-        <td class="tg-0lax" id="wcPtsVER">351.5</td>
-        <td class="tg-0lax">Onbeslist</td>
-      </tr>
-      <tr>
-        <td class="tg-0lax">Hamilton</td>
-        <td class="tg-0lax" id="wcPtsHAM">343.5</td>
-        <td class="tg-0lax">Onbeslist</td>
+        <th scope="row">Hamilton</th>
+        <td id="wcPtsHAM">343.5</td>
+        <td>Onbeslist</td>
       </tr>
     </tbody>
   </table>
 
-  <table class="tg" id="R21">
+  <table class="table" id="R21">
     <thead>
       <tr>
-        <th class="tg-0lax" colspan="6">R21 - Saudi-Arabië</th>
+        <th colspan="6">R21 - Saudi-Arabië</th>
+      </tr>
+      <tr>
+        <th scope="col">Coureur</th>
+        <th scope="col">Race positie</th>
+        <th scope="col">Snelste ronde</th>
+        <th scope="col">Race punten</th>
+        <th scope="col">WK punten</th>
+        <th scope="col">WK?</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody>      
       <tr>
-        <td class="tg-0lax">Coureur</td>
-        <td class="tg-0lax">Race positie</td>
-        <td class="tg-0lax">Snelste ronde</td>
-        <td class="tg-0lax">Race punten</td>
-        <td class="tg-0lax">WK punten</td>
-        <td class="tg-0lax">WK?</td>
-      </tr>
-      <tr>
-        <td class="tg-0lax">Verstappen</td>
-        <td class="tg-0lax">
+        <th scope="row">Verstappen</th>
+        <td>
           <select name="racePosVER" id="racePosVER">
             <option value="0" disabled selected>Kies</option>
             <option value="1">1</option>
@@ -68,16 +70,16 @@
             <option value="11">11 of lager</option>
           </select>
         </td>
-        <td class="tg-0lax">
+        <td>
           <input type="radio" id="fastestLapVER" name="fastestLap" value="VER">
         </td>
-        <td class="tg-0lax" id="racePtsVER">0</td>
-        <td class="tg-0lax" id="wcPtsVER">0</td>
-        <td class="tg-0lax" id="wcDefVER">Onbeslist</td>
+        <td id="racePtsVER">0</td>
+        <td id="wcPtsVER">0</td>
+        <td id="wcDefVER">Onbeslist</td>
       </tr>
       <tr>
-        <td class="tg-0lax">Hamilton</td>
-        <td class="tg-0lax">
+        <th scope="row">Hamilton</th>
+        <td>
           <select name="racePosHAM" id="racePosHAM">
             <option value="0" disabled selected>Kies</option>
             <option value="1">1</option>
@@ -93,44 +95,44 @@
             <option value="11">11 of lager</option>
           </select>
         </td>
-        <td class="tg-0lax">
+        <td>
           <input type="radio" id="fastestLapHAM" name="fastestLap" value="HAM">
         </td>
-        <td class="tg-0lax" id="racePtsHAM">0</td>
-        <td class="tg-0lax" id="wcPtsHAM">0</td>
-        <td class="tg-0lax" id="wcDefHAM">Onbeslist</td>
+        <td id="racePtsHAM">0</td>
+        <td id="wcPtsHAM">0</td>
+        <td id="wcDefHAM">Onbeslist</td>
       </tr>
       <tr>
-        <td class="tg-0lax">Other</td>
-        <td class="tg-0lax"></td>
-        <td class="tg-0lax">
+        <th scope="row">Other</th>
+        <td></td>
+        <td>
           <input type="radio" id="fastestLapOTH" name="fastestLap" value="OTH">
         </td>
-        <td class="tg-0lax"></td>
-        <td class="tg-0lax"></td>
-        <td class="tg-0lax"></td>
+        <td></td>
+        <td></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
 
-  <table class="tg" id="R22">
+  <table class="table" id="R22">
     <thead>
       <tr>
-        <th class="tg-0lax" colspan="6">R22 - Abu Dhabi</th>
+        <th colspan="6">R22 - Abu Dhabi</th>
+      </tr>
+      <tr>
+        <th scope="col">Coureur</th>
+        <th scope="col">Race positie</th>
+        <th scope="col">Snelste ronde</th>
+        <th scope="col">Race punten</th>
+        <th scope="col">WK punten</th>
+        <th scope="col">WK?</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td class="tg-0lax">Coureur</td>
-        <td class="tg-0lax">Race positie</td>
-        <td class="tg-0lax">Snelste ronde</td>
-        <td class="tg-0lax">Race punten</td>
-        <td class="tg-0lax">WK punten</td>
-        <td class="tg-0lax">WK?</td>
-      </tr>
-      <tr>
-        <td class="tg-0lax">Verstappen</td>
-        <td class="tg-0lax">
+        <th scope="row">Verstappen</th>
+        <td>
           <select name="racePosVER" id="racePosVER">
             <option value="0" disabled selected>Kies</option>
             <option value="1">1</option>
@@ -146,16 +148,16 @@
             <option value="11">11 of lager</option>
           </select>
         </td>
-        <td class="tg-0lax">
+        <td>
           <input type="radio" id="fastestLapVER" name="fastestLap" value="VER">
         </td>
-        <td class="tg-0lax" id="racePtsVER">0</td>
-        <td class="tg-0lax" id="wcPtsVER">0</td>
-        <td class="tg-0lax" id="wcDefVER">Onbeslist</td>
+        <td id="racePtsVER">0</td>
+        <td id="wcPtsVER">0</td>
+        <td id="wcDefVER">Onbeslist</td>
       </tr>
       <tr>
-        <td class="tg-0lax">Hamilton</td>
-        <td class="tg-0lax">
+        <th scope="row">Hamilton</th>
+        <td>
           <select name="racePosHAM" id="racePosHAM">
             <option value="0" disabled selected>Kies</option>
             <option value="1">1</option>
@@ -171,22 +173,22 @@
             <option value="11">11 of lager</option>
           </select>
         </td>
-        <td class="tg-0lax">
+        <td>
           <input type="radio" id="fastestLapHAM" name="fastestLap" value="HAM">
         </td>
-        <td class="tg-0lax" id="racePtsHAM">0</td>
-        <td class="tg-0lax" id="wcPtsHAM">0</td>
-        <td class="tg-0lax" id="wcDefHAM">Onbeslist</td>
+        <td id="racePtsHAM">0</td>
+        <td id="wcPtsHAM">0</td>
+        <td id="wcDefHAM">Onbeslist</td>
       </tr>
       <tr>
-        <td class="tg-0lax">Other</td>
-        <td class="tg-0lax"></td>
-        <td class="tg-0lax">
+        <th scope="row">Other</th>
+        <td></td>
+        <td>
           <input type="radio" id="fastestLapOTH" name="fastestLap" value="OTH">
         </td>
-        <td class="tg-0lax"></td>
-        <td class="tg-0lax"></td>
-        <td class="tg-0lax"></td>
+        <td></td>
+        <td></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
