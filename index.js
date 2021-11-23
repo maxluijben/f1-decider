@@ -13,6 +13,14 @@ const ptsLadder = {
   "11" : 0,
 }
 
+const rounds = [
+  "1", "2", "3", "4", "5", 
+  "6", "7", "8", "9", "10", 
+  "11", "12", "13", "14", "15", 
+  "16", "17", "18", "19", "20", 
+  "21", "22",
+]
+
 class Stats {
   constructor(thisRound) {
 
@@ -54,53 +62,74 @@ class Stats {
     }
   }
 
-  get prevWcPtsVER() {
-    return this.prevRoundStats.wcPts.VER
-  }
-  get prevWcPtsHAM() {
-    return this.prevRoundStats.wcPts.HAM
-  }
+  // get prevWcPtsVER() {
+  //   return this.prevRoundStats.wcPts.VER
+  // }
+  // get prevWcPtsHAM() {
+  //   return this.prevRoundStats.wcPts.HAM
+  // }
 
-  get newWcPtsVER() {
-    return this.racePtsVER + this.prevWcPtsVER
-  } 
-  get newWcPtsHAM() {
-    return this.racePtsHAM + this.prevWcPtsHAM
-  }
+  // get newWcPtsVER() {
+  //   return this.racePtsVER + this.prevWcPtsVER
+  // } 
+  // get newWcPtsHAM() {
+  //   return this.racePtsHAM + this.prevWcPtsHAM
+  // }
 
   printStats() {
     document.querySelector(`#R${this.thisRound} #racePtsVER`).innerHTML = this.racePtsVER
     document.querySelector(`#R${this.thisRound} #racePtsHAM`).innerHTML = this.racePtsHAM
+
+    // calculate stats for current and all upcoming rounds
+    rounds.slice(this.thisRound - 1).forEach(round => {
+      console.log('round', round)
+
+      const prevWcPtsVER = parseFloat(document.querySelector(`#R${round - 1} #wcPtsVER`).innerHTML)
+      const prevWcPtsHAM = parseFloat(document.querySelector(`#R${round - 1} #wcPtsHAM`).innerHTML)
+      
+      const racePtsVER = parseFloat(document.querySelector(`#R${round} #racePtsVER`).innerHTML)
+      const racePtsHAM = parseFloat(document.querySelector(`#R${round} #racePtsHAM`).innerHTML)
+
+      const wcPtsVER = prevWcPtsVER + racePtsVER
+      const wcPtsHAM = prevWcPtsHAM + racePtsHAM
+
+      document.querySelector(`#R${round} #wcPtsVER`).innerHTML = wcPtsVER
+      document.querySelector(`#R${round} #wcPtsHAM`).innerHTML = wcPtsHAM
+    })
+
+
+    // document.querySelector(`#R${this.thisRound} #racePtsVER`).innerHTML = this.racePtsVER
+    // document.querySelector(`#R${this.thisRound} #racePtsHAM`).innerHTML = this.racePtsHAM
     
-    document.querySelector(`#R${this.thisRound} #wcPtsVER`).innerHTML = this.newWcPtsVER
-    document.querySelector(`#R${this.thisRound} #wcPtsHAM`).innerHTML = this.newWcPtsHAM
+    // document.querySelector(`#R${this.thisRound} #wcPtsVER`).innerHTML = this.newWcPtsVER
+    // document.querySelector(`#R${this.thisRound} #wcPtsHAM`).innerHTML = this.newWcPtsHAM
 
     // Upcoming Round
-    if (this.nextRound != '') {
-      document.querySelector(`#R${this.nextRound} #wcPtsVER`).innerHTML = this.newWcPtsVER
-      document.querySelector(`#R${this.nextRound} #wcPtsHAM`).innerHTML = this.newWcPtsHAM
-    }
+    // if (this.nextRound != '') {
+    //   document.querySelector(`#R${this.nextRound} #wcPtsVER`).innerHTML = this.newWcPtsVER
+    //   document.querySelector(`#R${this.nextRound} #wcPtsHAM`).innerHTML = this.newWcPtsHAM
+    // }
 
-    if ((this.newWcPtsVER - this.newWcPtsHAM) >= 26) {
-      document.querySelector(`#R${this.thisRound} #wcDefVER`).innerHTML = "Ja"
-      document.querySelector(`#R${this.thisRound} #wcDefHAM`).innerHTML = "Nee"
+    // if ((this.newWcPtsVER - this.newWcPtsHAM) >= 26) {
+    //   document.querySelector(`#R${this.thisRound} #wcDefVER`).innerHTML = "Ja"
+    //   document.querySelector(`#R${this.thisRound} #wcDefHAM`).innerHTML = "Nee"
 
-      // Upcoming Round
-      if (this.nextRound != '') {
-        document.querySelector(`#R${this.nextRound} #wcDefVER`).innerHTML = "Ja"
-        document.querySelector(`#R${this.nextRound} #wcDefHAM`).innerHTML = "Nee"
-      }
+    //   // Upcoming Round
+    //   if (this.nextRound != '') {
+    //     document.querySelector(`#R${this.nextRound} #wcDefVER`).innerHTML = "Ja"
+    //     document.querySelector(`#R${this.nextRound} #wcDefHAM`).innerHTML = "Nee"
+    //   }
 
-    } else if ((this.newWcPtsVER - this.newWcPtsHAM) < 26) {
-      document.querySelector(`#R${this.thisRound} #wcDefVER`).innerHTML = "Onbeslist"
-      document.querySelector(`#R${this.thisRound} #wcDefHAM`).innerHTML = "Onbeslist"
+    // } else if ((this.newWcPtsVER - this.newWcPtsHAM) < 26) {
+    //   document.querySelector(`#R${this.thisRound} #wcDefVER`).innerHTML = "Onbeslist"
+    //   document.querySelector(`#R${this.thisRound} #wcDefHAM`).innerHTML = "Onbeslist"
 
-      // Upcoming Round
-      if (this.nextRound != '') {
-        document.querySelector(`#R${this.nextRound} #wcDefVER`).innerHTML = "Onbeslist"
-        document.querySelector(`#R${this.nextRound} #wcDefHAM`).innerHTML = "Onbeslist"
-      }
-    }
+    //   // Upcoming Round
+    //   if (this.nextRound != '') {
+    //     document.querySelector(`#R${this.nextRound} #wcDefVER`).innerHTML = "Onbeslist"
+    //     document.querySelector(`#R${this.nextRound} #wcDefHAM`).innerHTML = "Onbeslist"
+    //   }
+    // }
   }
 
 }
