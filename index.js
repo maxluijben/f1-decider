@@ -14,27 +14,27 @@ const ptsLadder = {
 }
 
 class Stats {
-  constructor(prevRound, thisRound, nextRound) {
+  constructor(thisRound) {
 
     this.thisRound = thisRound
-    this.prevRound = prevRound
-    this.nextRound = nextRound
+    this.prevRound = thisRound - 1
+    this.nextRound = thisRound + 1
 
     this.prevRoundStats = {
       wcPts : {
-        VER : parseFloat(document.querySelector(`#${this.prevRound} #wcPtsVER`).innerHTML), 
-        HAM : parseFloat(document.querySelector(`#${this.prevRound} #wcPtsHAM`).innerHTML),
+        VER : parseFloat(document.querySelector(`#R${this.prevRound} #wcPtsVER`).innerHTML), 
+        HAM : parseFloat(document.querySelector(`#R${this.prevRound} #wcPtsHAM`).innerHTML),
       },
     }
 
     this.thisRoundStats = {
       racePos : { 
-        VER : document.querySelector(`#${this.thisRound} #racePosVER`).value,
-        HAM : document.querySelector(`#${this.thisRound} #racePosHAM`).value,
+        VER : document.querySelector(`#R${this.thisRound} #racePosVER`).value,
+        HAM : document.querySelector(`#R${this.thisRound} #racePosHAM`).value,
       },
       fastLap : {
-        VER : document.querySelector(`#${this.thisRound} #fastestLapVER`).checked,
-        HAM : document.querySelector(`#${this.thisRound} #fastestLapHAM`).checked,
+        VER : document.querySelector(`#R${this.thisRound} #fastestLapVER`).checked,
+        HAM : document.querySelector(`#R${this.thisRound} #fastestLapHAM`).checked,
       },
     }
   }
@@ -69,36 +69,36 @@ class Stats {
   }
 
   printStats() {
-    document.querySelector(`#${this.thisRound} #racePtsVER`).innerHTML = this.racePtsVER
-    document.querySelector(`#${this.thisRound} #racePtsHAM`).innerHTML = this.racePtsHAM
+    document.querySelector(`#R${this.thisRound} #racePtsVER`).innerHTML = this.racePtsVER
+    document.querySelector(`#R${this.thisRound} #racePtsHAM`).innerHTML = this.racePtsHAM
     
-    document.querySelector(`#${this.thisRound} #wcPtsVER`).innerHTML = this.newWcPtsVER
-    document.querySelector(`#${this.thisRound} #wcPtsHAM`).innerHTML = this.newWcPtsHAM
+    document.querySelector(`#R${this.thisRound} #wcPtsVER`).innerHTML = this.newWcPtsVER
+    document.querySelector(`#R${this.thisRound} #wcPtsHAM`).innerHTML = this.newWcPtsHAM
 
     // Upcoming Round
-    if (this.nextRound !== '') {
-      document.querySelector(`#${this.nextRound} #wcPtsVER`).innerHTML = this.newWcPtsVER
-      document.querySelector(`#${this.nextRound} #wcPtsHAM`).innerHTML = this.newWcPtsHAM
+    if (this.nextRound != '') {
+      document.querySelector(`#R${this.nextRound} #wcPtsVER`).innerHTML = this.newWcPtsVER
+      document.querySelector(`#R${this.nextRound} #wcPtsHAM`).innerHTML = this.newWcPtsHAM
     }
 
     if ((this.newWcPtsVER - this.newWcPtsHAM) >= 26) {
-      document.querySelector(`#${this.thisRound} #wcDefVER`).innerHTML = "Ja"
-      document.querySelector(`#${this.thisRound} #wcDefHAM`).innerHTML = "Nee"
+      document.querySelector(`#R${this.thisRound} #wcDefVER`).innerHTML = "Ja"
+      document.querySelector(`#R${this.thisRound} #wcDefHAM`).innerHTML = "Nee"
 
       // Upcoming Round
-      if (this.nextRound !== '') {
-        document.querySelector(`#${this.nextRound} #wcDefVER`).innerHTML = "Ja"
-        document.querySelector(`#${this.nextRound} #wcDefHAM`).innerHTML = "Nee"
+      if (this.nextRound != '') {
+        document.querySelector(`#R${this.nextRound} #wcDefVER`).innerHTML = "Ja"
+        document.querySelector(`#R${this.nextRound} #wcDefHAM`).innerHTML = "Nee"
       }
 
     } else if ((this.newWcPtsVER - this.newWcPtsHAM) < 26) {
-      document.querySelector(`#${this.thisRound} #wcDefVER`).innerHTML = "Onbeslist"
-      document.querySelector(`#${this.thisRound} #wcDefHAM`).innerHTML = "Onbeslist"
+      document.querySelector(`#R${this.thisRound} #wcDefVER`).innerHTML = "Onbeslist"
+      document.querySelector(`#R${this.thisRound} #wcDefHAM`).innerHTML = "Onbeslist"
 
       // Upcoming Round
-      if (this.nextRound !== '') {
-        document.querySelector(`#${this.nextRound} #wcDefVER`).innerHTML = "Onbeslist"
-        document.querySelector(`#${this.nextRound} #wcDefHAM`).innerHTML = "Onbeslist"
+      if (this.nextRound != '') {
+        document.querySelector(`#R${this.nextRound} #wcDefVER`).innerHTML = "Onbeslist"
+        document.querySelector(`#R${this.nextRound} #wcDefHAM`).innerHTML = "Onbeslist"
       }
     }
   }
@@ -107,19 +107,19 @@ class Stats {
 
 
 window.addEventListener("load", function() {
-  const allStats = new Stats("R20", "R21", "R22")
+  const allStats = new Stats(21)
   allStats.printStats()
 })
 
 document.querySelector("#R21").addEventListener("change", function() {  
-  const allStats = new Stats("R20", "R21", "R22")
+  const allStats = new Stats(21)
   allStats.printStats()
 
   console.log(allStats)
 })
 
 document.querySelector("#R22").addEventListener("change", function() {  
-  const allStats = new Stats("R21", "R22", "")
+  const allStats = new Stats(22)
   allStats.printStats()
 
   console.log(allStats)
