@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+  <table class="tg">
+    <thead>
+      <tr>
+        <th class="tg-0lax" colspan="3">Na Qatar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tg-0lax">Coureur</td>
+        <td class="tg-0lax">WK punten</td>
+        <td class="tg-0lax">WK?</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Verstappen</td>
+        <td class="tg-0lax">351.5</td>
+        <td class="tg-0lax">Onbeslist</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Hamilton</td>
+        <td class="tg-0lax">343.5</td>
+        <td class="tg-0lax">Onbeslist</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="tg">
+    <thead>
+      <tr>
+        <th class="tg-0lax" colspan="6">Saudi-Arabië</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tg-0lax">Coureur</td>
+        <td class="tg-0lax">Race positie</td>
+        <td class="tg-0lax">Snelste ronde</td>
+        <td class="tg-0lax">Race punten</td>
+        <td class="tg-0lax">WK punten</td>
+        <td class="tg-0lax">WK?</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Verstappen</td>
+        <td class="tg-0lax">
+          <select name="racePosSauVER" id="racePosSauVER">
+            <option value="0" disabled selected>Kies</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11 of lager</option>
+          </select>
+        </td>
+        <td class="tg-0lax">
+          <input type="radio" id="fastestLapSauVER" name="fastestLapSau" value="VER">
+        </td>
+        <td class="tg-0lax" id="racePtsSauVER">--</td>
+        <td class="tg-0lax" id="wcPtsSauVER">--</td>
+        <td class="tg-0lax" id="wcDefSauVER">Onbeslist</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Hamilton</td>
+        <td class="tg-0lax">
+          <select name="racePosSauHAM" id="racePosSauHAM">
+            <option value="0" disabled selected>Kies</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11 of lager</option>
+          </select>
+        </td>
+        <td class="tg-0lax">
+          <input type="radio" id="fastestLapSauHAM" name="fastestLapSau" value="HAM">
+        </td>
+        <td class="tg-0lax" id="racePtsSauHAM">--</td>
+        <td class="tg-0lax" id="wcPtsSauHAM">--</td>
+        <td class="tg-0lax" id="wcDefSauHAM">Onbeslist</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Other</td>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax">
+          <input type="radio" id="fastestLapSauOTH" name="fastestLapSau" value="OTH">
+        </td>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table class="tg">
+    <thead>
+      <tr>
+        <th class="tg-0lax" colspan="6">Abu Dhabi</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tg-0lax">Coureur</td>
+        <td class="tg-0lax">Race positie</td>
+        <td class="tg-0lax">Snelste ronde</td>
+        <td class="tg-0lax">Race punten</td>
+        <td class="tg-0lax">WK punten</td>
+        <td class="tg-0lax">WK?</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Verstappen</td>
+        <td class="tg-0lax">
+          <select name="racePosAbuVER" id="racePosAbuVER">
+            <option value="0" disabled selected>Kies</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11 of lager</option>
+          </select>
+        </td>
+        <td class="tg-0lax">
+          <input type="radio" id="fastestLapAbuVER" name="fastestLapAbu" value="VER">
+        </td>
+        <td class="tg-0lax" id="racePtsAbuVER">--</td>
+        <td class="tg-0lax">calc</td>
+        <td class="tg-0lax">if</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Hamilton</td>
+        <td class="tg-0lax">
+          <select name="racePosAbuHAM" id="racePosAbuHAM">
+            <option value="0" disabled selected>Kies</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11 of lager</option>
+          </select>
+        </td>
+        <td class="tg-0lax">
+          <input type="radio" id="fastestLapAbuHAM" name="fastestLapAbu" value="HAM">
+        </td>
+        <td class="tg-0lax" id="racePtsAbuHAM">--</td>
+        <td class="tg-0lax">calc</td>
+        <td class="tg-0lax">if</td>
+      </tr>
+      <tr>
+        <td class="tg-0lax">Other</td>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax">
+          <input type="radio" id="fastestLapAbuOTH" name="fastestLapAbu" value="OTH">
+        </td>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+        <td class="tg-0lax"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script src="index.js"></script>
+</body>
+</html>
