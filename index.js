@@ -80,10 +80,11 @@ class Stats {
     document.querySelector(`#R${this.thisRound} #racePtsVER`).innerHTML = this.racePtsVER
     document.querySelector(`#R${this.thisRound} #racePtsHAM`).innerHTML = this.racePtsHAM
 
-    // calculate stats for current and all upcoming rounds
+    // Calculate stats for current and all upcoming rounds
     rounds.slice(this.thisRound - 1).forEach(round => {
       console.log('round', round)
 
+      // WC Points calculation
       const prevWcPtsVER = parseFloat(document.querySelector(`#R${round - 1} #wcPtsVER`).innerHTML)
       const prevWcPtsHAM = parseFloat(document.querySelector(`#R${round - 1} #wcPtsHAM`).innerHTML)
       
@@ -95,6 +96,31 @@ class Stats {
 
       document.querySelector(`#R${round} #wcPtsVER`).innerHTML = wcPtsVER
       document.querySelector(`#R${round} #wcPtsHAM`).innerHTML = wcPtsHAM
+      
+
+      // WC decider
+      const roundsLeft = rounds.length - round
+      const wcPointsDelta = roundsLeft * 25 + 1
+
+      console.log('prev round', round - 1)
+      console.log('total rounds', rounds.length)
+      console.log('rounds to go', roundsLeft)
+      console.log('required WC points delta', wcPointsDelta)
+
+      if (wcPtsVER - wcPtsHAM >= wcPointsDelta) {
+        document.querySelector(`#R${round} #wcDefVER`).innerHTML = "Ja"
+        document.querySelector(`#R${round} #wcDefHAM`).innerHTML = "Nee"
+      } else if (wcPtsHAM - wcPtsVER >= wcPointsDelta) {
+        document.querySelector(`#R${round} #wcDefVER`).innerHTML = "Nee"
+        document.querySelector(`#R${round} #wcDefHAM`).innerHTML = "Ja"
+      } else if (wcPtsHAM - wcPtsVER == 0) {
+        document.querySelector(`#R${round} #wcDefVER`).innerHTML = "Ja"
+        document.querySelector(`#R${round} #wcDefHAM`).innerHTML = "Nee"
+      } else if (wcPtsVER - wcPtsHAM < wcPointsDelta) {
+        document.querySelector(`#R${round} #wcDefVER`).innerHTML = "Onbeslist"
+        document.querySelector(`#R${round} #wcDefHAM`).innerHTML = "Onbeslist"
+      }
+
     })
 
 
