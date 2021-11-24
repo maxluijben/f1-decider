@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>  
-  <h1>Which driver will be the World Champion of 2021?</h1>
-  <p>With the end of the 2021 F1 season getting closer and closer, the F1 World Championship is more exciting than ever. With this calculator you can keep on track with which driver has the best chances to become the next World Champion, Verstappen or Hamilton.</p>
+  <h1><small class="text-muted">Verstappen vs. Hamilton</small><br> Who will become the World Champion of the 2021 F1 season?</h1>
+  <p class="lead">With the end of the 2021 F1 season getting closer and closer, the F1 World Championship is more exciting than ever. With this calculator you can keep on track with which driver has the best chances to become the next World Champion, Verstappen or Hamilton.</p>
   <table class="table" id="R20">
     <thead>
       <tr>
@@ -37,156 +37,160 @@
     </tbody>
   </table>
 
-  <table class="table caption-top" id="R21">
-    <caption class="h2">R21 - Saudi-Arabië</caption>
-    <thead class="table-light">
-      <tr>
-        <th scope="col">Coureur</th>
-        <th scope="col">Race positie</th>
-        <th scope="col">Snelste ronde</th>
-        <th scope="col">Race punten</th>
-        <th scope="col">WK punten</th>
-        <th scope="col">WK?</th>
-      </tr>
-    </thead>
-    <tbody>      
-      <tr>
-        <th scope="row">Verstappen</th>
-        <td>
-          <select name="racePosVER" id="racePosVER">
-            <option value="0" disabled selected>Kies</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11 of lager</option>
-          </select>
-        </td>
-        <td>
-          <input type="radio" id="fastestLapVER" name="fastestLapR21" value="VER">
-        </td>
-        <td id="racePtsVER">0</td>
-        <td id="wcPtsVER">0</td>
-        <td id="wcDefVER">Onbeslist</td>
-      </tr>
-      <tr>
-        <th scope="row">Hamilton</th>
-        <td>
-          <select name="racePosHAM" id="racePosHAM">
-            <option value="0" disabled selected>Kies</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11 of lager</option>
-          </select>
-        </td>
-        <td>
-          <input type="radio" id="fastestLapHAM" name="fastestLapR21" value="HAM">
-        </td>
-        <td id="racePtsHAM">0</td>
-        <td id="wcPtsHAM">0</td>
-        <td id="wcDefHAM">Onbeslist</td>
-      </tr>
-      <tr>
-        <th scope="row">Other</th>
-        <td></td>
-        <td>
-          <input type="radio" id="fastestLapOTH" name="fastestLapR21" value="OTH">
-        </td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <table class="table caption-top" id="R22">
-    <caption class="h2">R22 - Abu Dhabi</caption>
-    <thead class="table-light">
-      <tr>
-        <th scope="col">Coureur</th>
-        <th scope="col">Race positie</th>
-        <th scope="col">Snelste ronde</th>
-        <th scope="col">Race punten</th>
-        <th scope="col">WK punten</th>
-        <th scope="col">WK?</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">Verstappen</th>
-        <td>
-          <select name="racePosVER" id="racePosVER">
-            <option value="0" disabled selected>Kies</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11 of lager</option>
-          </select>
-        </td>
-        <td>
-          <input type="radio" id="fastestLapVER" name="fastestLapR22" value="VER">
-        </td>
-        <td id="racePtsVER">0</td>
-        <td id="wcPtsVER">0</td>
-        <td id="wcDefVER">Onbeslist</td>
-      </tr>
-      <tr>
-        <th scope="row">Hamilton</th>
-        <td>
-          <select name="racePosHAM" id="racePosHAM">
-            <option value="0" disabled selected>Kies</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11 of lager</option>
-          </select>
-        </td>
-        <td>
-          <input type="radio" id="fastestLapHAM" name="fastestLapR22" value="HAM">
-        </td>
-        <td id="racePtsHAM">0</td>
-        <td id="wcPtsHAM">0</td>
-        <td id="wcDefHAM">Onbeslist</td>
-      </tr>
-      <tr>
-        <th scope="row">Other</th>
-        <td></td>
-        <td>
-          <input type="radio" id="fastestLapOTH" name="fastestLapR22" value="OTH">
-        </td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table caption-top" id="R21">
+      <caption class="h2">R21 - Saudi-Arabië</caption>
+      <thead class="table-light">
+        <tr>
+          <th scope="col">Coureur</th>
+          <th scope="col">Race positie</th>
+          <th scope="col">Snelste ronde</th>
+          <th scope="col">Race punten</th>
+          <th scope="col">WK punten</th>
+          <th scope="col">WK?</th>
+        </tr>
+      </thead>
+      <tbody>      
+        <tr>
+          <th scope="row">Verstappen</th>
+          <td>
+            <select name="racePosVER" id="racePosVER">
+              <option value="0" disabled selected>Kies</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11 of lager</option>
+            </select>
+          </td>
+          <td>
+            <input type="radio" id="fastestLapVER" name="fastestLapR21" value="VER">
+          </td>
+          <td id="racePtsVER">0</td>
+          <td id="wcPtsVER">0</td>
+          <td id="wcDefVER">Onbeslist</td>
+        </tr>
+        <tr>
+          <th scope="row">Hamilton</th>
+          <td>
+            <select name="racePosHAM" id="racePosHAM">
+              <option value="0" disabled selected>Kies</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11 of lager</option>
+            </select>
+          </td>
+          <td>
+            <input type="radio" id="fastestLapHAM" name="fastestLapR21" value="HAM">
+          </td>
+          <td id="racePtsHAM">0</td>
+          <td id="wcPtsHAM">0</td>
+          <td id="wcDefHAM">Onbeslist</td>
+        </tr>
+        <tr>
+          <th scope="row">Other</th>
+          <td></td>
+          <td>
+            <input type="radio" id="fastestLapOTH" name="fastestLapR21" value="OTH">
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="table-responsive">
+    <table class="table caption-top" id="R22">
+      <caption class="h2">R22 - Abu Dhabi</caption>
+      <thead class="table-light">
+        <tr>
+          <th scope="col">Coureur</th>
+          <th scope="col">Race positie</th>
+          <th scope="col">Snelste ronde</th>
+          <th scope="col">Race punten</th>
+          <th scope="col">WK punten</th>
+          <th scope="col">WK?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Verstappen</th>
+          <td>
+            <select name="racePosVER" id="racePosVER">
+              <option value="0" disabled selected>Kies</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11 of lager</option>
+            </select>
+          </td>
+          <td>
+            <input type="radio" id="fastestLapVER" name="fastestLapR22" value="VER">
+          </td>
+          <td id="racePtsVER">0</td>
+          <td id="wcPtsVER">0</td>
+          <td id="wcDefVER">Onbeslist</td>
+        </tr>
+        <tr>
+          <th scope="row">Hamilton</th>
+          <td>
+            <select name="racePosHAM" id="racePosHAM">
+              <option value="0" disabled selected>Kies</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11 of lager</option>
+            </select>
+          </td>
+          <td>
+            <input type="radio" id="fastestLapHAM" name="fastestLapR22" value="HAM">
+          </td>
+          <td id="racePtsHAM">0</td>
+          <td id="wcPtsHAM">0</td>
+          <td id="wcDefHAM">Onbeslist</td>
+        </tr>
+        <tr>
+          <th scope="row">Other</th>
+          <td></td>
+          <td>
+            <input type="radio" id="fastestLapOTH" name="fastestLapR22" value="OTH">
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <script src="index.js"></script>
 </body>
