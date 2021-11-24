@@ -1,4 +1,4 @@
-.table {
+.table-responsive {
   margin-bottom: 3rem;
 }
 
@@ -13,5 +13,11 @@ tr > th, tr > td {
 body {
   max-width: 800px;
   margin: 0 auto;
-  margin-top: 64px;
+  padding: 15px;
+}
+
+@media screen and (min-width: 400px) {
+  body {
+    margin-top: 64px;
+  }
 }
