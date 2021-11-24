@@ -2,8 +2,9 @@
   margin-bottom: 3rem;
 }
 
-caption {
-  color: var(--bs-body-color);
+
+.collapse {
+  visibility: collapse;
 }
 
 tr > th, tr > td {
