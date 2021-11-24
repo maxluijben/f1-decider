@@ -5,3 +5,13 @@
 #R20 {
   visibility: collapse;
 }
+
+tr > th, tr > td {
+  width: 17%;
+}
+
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 64px;
+}
