@@ -2,8 +2,8 @@
   margin-bottom: 3rem;
 }
 
-#R20 {
-  visibility: collapse;
+caption {
+  color: var(--bs-body-color);
 }
 
 tr > th, tr > td {
