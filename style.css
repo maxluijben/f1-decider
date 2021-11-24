@@ -34,8 +34,10 @@ caption {
   visibility: collapse;
 }
 
-tr > th, tr > td {
-  width: 17%;
+
+
+select {
+  min-width: 100px;
 }
 
 
