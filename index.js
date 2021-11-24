@@ -117,8 +117,8 @@ class Stats {
         document.querySelector(`#R${round} #wcDefVER`).innerHTML = "Ja"
         document.querySelector(`#R${round} #wcDefHAM`).innerHTML = "Nee"
       } else if (wcPtsVER - wcPtsHAM < wcPointsDelta) {
-        document.querySelector(`#R${round} #wcDefVER`).innerHTML = "Onbeslist"
-        document.querySelector(`#R${round} #wcDefHAM`).innerHTML = "Onbeslist"
+        document.querySelector(`#R${round} #wcDefVER`).innerHTML = "NTB"
+        document.querySelector(`#R${round} #wcDefHAM`).innerHTML = "NTB"
       }
 
     })
