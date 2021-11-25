@@ -98,8 +98,7 @@ class Stats {
       document.querySelector(`#round_${round} [data-ref="wcPtsHAM"]`).innerHTML = wcPtsHAM
       
       // WC standings position 
-
-      if (wcPtsVER > wcPtsHAM) {
+      if (wcPtsVER > wcPtsHAM || wcPtsVER == wcPtsHAM) {
         document.querySelector(`#round_${round} [data-ref="wcPosVER"]`).innerHTML = "1"
         document.querySelector(`#round_${round} [data-ref="wcPosCardVER"]`).classList.remove("p2")
         document.querySelector(`#round_${round} [data-ref="wcPosCardVER"]`).classList.add("p1")
@@ -113,11 +112,6 @@ class Stats {
         document.querySelector(`#round_${round} [data-ref="wcPosHAM"]`).innerHTML = "1"
         document.querySelector(`#round_${round} [data-ref="wcPosCardHAM"]`).classList.remove("p2")
         document.querySelector(`#round_${round} [data-ref="wcPosCardHAM"]`).classList.add("p1")
-      } else if (wcPtsVER == wcPtsHAM) {
-        document.querySelector(`#round_${round} [data-ref="wcPosCardVER"]`).classList.remove("p2")
-        document.querySelector(`#round_${round} [data-ref="wcPosVER"]`).innerHTML = "1"
-        document.querySelector(`#round_${round} [data-ref="wcPosCardHAM"]`).classList.remove("p2")
-        document.querySelector(`#round_${round} [data-ref="wcPosHAM"]`).innerHTML = "1"
       }
 
 
