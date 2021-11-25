@@ -101,12 +101,22 @@ class Stats {
 
       if (wcPtsVER > wcPtsHAM) {
         document.querySelector(`#round_${round} [data-ref="wcPosVER"]`).innerHTML = "1"
+        document.querySelector(`#round_${round} [data-ref="wcPosCardVER"]`).classList.remove("p2")
+        document.querySelector(`#round_${round} [data-ref="wcPosCardVER"]`).classList.add("p1")
         document.querySelector(`#round_${round} [data-ref="wcPosHAM"]`).innerHTML = "2"
+        document.querySelector(`#round_${round} [data-ref="wcPosCardHAM"]`).classList.remove("p1")
+        document.querySelector(`#round_${round} [data-ref="wcPosCardHAM"]`).classList.add("p2")
       } else if (wcPtsVER < wcPtsHAM) {
         document.querySelector(`#round_${round} [data-ref="wcPosVER"]`).innerHTML = "2"
+        document.querySelector(`#round_${round} [data-ref="wcPosCardVER"]`).classList.remove("p1")
+        document.querySelector(`#round_${round} [data-ref="wcPosCardVER"]`).classList.add("p2")
         document.querySelector(`#round_${round} [data-ref="wcPosHAM"]`).innerHTML = "1"
+        document.querySelector(`#round_${round} [data-ref="wcPosCardHAM"]`).classList.remove("p2")
+        document.querySelector(`#round_${round} [data-ref="wcPosCardHAM"]`).classList.add("p1")
       } else if (wcPtsVER == wcPtsHAM) {
+        document.querySelector(`#round_${round} [data-ref="wcPosCardVER"]`).classList.remove("p2")
         document.querySelector(`#round_${round} [data-ref="wcPosVER"]`).innerHTML = "1"
+        document.querySelector(`#round_${round} [data-ref="wcPosCardHAM"]`).classList.remove("p2")
         document.querySelector(`#round_${round} [data-ref="wcPosHAM"]`).innerHTML = "1"
       }
 

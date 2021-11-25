@@ -3,6 +3,7 @@
 :root {
   /* --bs-font-sans-serif: "Titillium Web", system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; */
   --bs-body-font-family: "Titillium Web", var(--bs-font-sans-serif);
+  --border-small-width: 1px;
 }
 
 body {
@@ -40,7 +41,9 @@ caption {
 tr {
   height: 52px;
 }
-
+.table>:not(caption)>*>* {
+  border-bottom-width: var(--border-small-width);
+}
 
 select {
   min-width: 100px;
@@ -168,7 +171,11 @@ section.pattern-border {
 .wc-standings .card {
   border-top: 0;
   border-left: 0;
-  border-radius: 0 0 8px 0;
+  border-width: var(--border-small-width);
+  border-radius: 0 0 16px 0;
+}
+.wc-standings .card.p2 {
+  padding-top: 24px;
 }
 .wc-standings .card > * {
   display: flex;
@@ -187,13 +194,14 @@ section.pattern-border {
   font-weight: 600;
   flex-direction: row;
   padding: 12px;
-  border-top: 1px solid #DFE2E6;
+  border-top: var(--border-small-width) solid #DFE2E6;
 }
 .wc-standings .wc-def-label {
   margin-inline-end: 4px;
 }
 .wc-standings .wc-standings {
   padding: 16px;
+  padding-top: 0;
 }
 
 .wc-standings-position-container {
