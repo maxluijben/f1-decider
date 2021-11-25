@@ -30,19 +30,19 @@ class Stats {
 
     this.prevRoundStats = {
       wcPts : {
-        VER : parseFloat(document.querySelector(`#R${this.prevRound} #wcPtsVER`).innerHTML), 
-        HAM : parseFloat(document.querySelector(`#R${this.prevRound} #wcPtsHAM`).innerHTML),
+        VER : parseFloat(document.querySelector(`#R${this.prevRound} [data-ref="wcPtsVER"]`).innerHTML), 
+        HAM : parseFloat(document.querySelector(`#R${this.prevRound} [data-ref="wcPtsHAM"]`).innerHTML),
       },
     }
 
     this.thisRoundStats = {
       racePos : { 
-        VER : document.querySelector(`#R${this.thisRound} #racePosVER`).value,
-        HAM : document.querySelector(`#R${this.thisRound} #racePosHAM`).value,
+        VER : document.querySelector(`#R${this.thisRound} [data-ref="racePosVER"]`).value,
+        HAM : document.querySelector(`#R${this.thisRound} [data-ref="racePosHAM"]`).value,
       },
       fastLap : {
-        VER : document.querySelector(`#R${this.thisRound} #fastestLapVER`).checked,
-        HAM : document.querySelector(`#R${this.thisRound} #fastestLapHAM`).checked,
+        VER : document.querySelector(`#R${this.thisRound} [data-ref="fastestLapVER"]`).checked,
+        HAM : document.querySelector(`#R${this.thisRound} [data-ref="fastestLapHAM"]`).checked,
       },
     }
   }
@@ -77,25 +77,25 @@ class Stats {
   // }
 
   printStats() {
-    document.querySelector(`#R${this.thisRound} #racePtsVER`).innerHTML = this.racePtsVER
-    document.querySelector(`#R${this.thisRound} #racePtsHAM`).innerHTML = this.racePtsHAM
+    document.querySelector(`#R${this.thisRound} [data-ref="racePtsVER"]`).innerHTML = this.racePtsVER
+    document.querySelector(`#R${this.thisRound} [data-ref="racePtsHAM"]`).innerHTML = this.racePtsHAM
 
     // Calculate stats for current and all upcoming rounds
     rounds.slice(this.thisRound - 1).forEach(round => {
       console.log('round', round)
 
       // WC Points calculation
-      const prevWcPtsVER = parseFloat(document.querySelector(`#R${round - 1} #wcPtsVER`).innerHTML)
-      const prevWcPtsHAM = parseFloat(document.querySelector(`#R${round - 1} #wcPtsHAM`).innerHTML)
+      const prevWcPtsVER = parseFloat(document.querySelector(`#R${round - 1} [data-ref="wcPtsVER"]`).innerHTML)
+      const prevWcPtsHAM = parseFloat(document.querySelector(`#R${round - 1} [data-ref="wcPtsHAM"]`).innerHTML)
       
-      const racePtsVER = parseFloat(document.querySelector(`#R${round} #racePtsVER`).innerHTML)
-      const racePtsHAM = parseFloat(document.querySelector(`#R${round} #racePtsHAM`).innerHTML)
+      const racePtsVER = parseFloat(document.querySelector(`#R${round} [data-ref="racePtsVER"]`).innerHTML)
+      const racePtsHAM = parseFloat(document.querySelector(`#R${round} [data-ref="racePtsHAM"]`).innerHTML)
 
       const wcPtsVER = prevWcPtsVER + racePtsVER
       const wcPtsHAM = prevWcPtsHAM + racePtsHAM
 
-      document.querySelector(`#R${round} #wcPtsVER`).innerHTML = wcPtsVER
-      document.querySelector(`#R${round} #wcPtsHAM`).innerHTML = wcPtsHAM
+      document.querySelector(`#R${round} [data-ref="wcPtsVER"]`).innerHTML = wcPtsVER
+      document.querySelector(`#R${round} [data-ref="wcPtsHAM"]`).innerHTML = wcPtsHAM
       
 
       // WC decider
@@ -108,17 +108,17 @@ class Stats {
       console.log('required WC points delta', wcPointsDelta)
 
       if (wcPtsVER - wcPtsHAM >= wcPointsDelta) {
-        document.querySelector(`#R${round} #wcDefVER`).innerHTML = "Ja"
-        document.querySelector(`#R${round} #wcDefHAM`).innerHTML = "Nee"
+        document.querySelector(`#R${round} [data-ref="wcDefVER"]`).innerHTML = "Ja"
+        document.querySelector(`#R${round} [data-ref="wcDefHAM"]`).innerHTML = "Nee"
       } else if (wcPtsHAM - wcPtsVER >= wcPointsDelta) {
-        document.querySelector(`#R${round} #wcDefVER`).innerHTML = "Nee"
-        document.querySelector(`#R${round} #wcDefHAM`).innerHTML = "Ja"
+        document.querySelector(`#R${round} [data-ref="wcDefVER"]`).innerHTML = "Nee"
+        document.querySelector(`#R${round} [data-ref="wcDefHAM"]`).innerHTML = "Ja"
       } else if (wcPtsHAM - wcPtsVER == 0) {
-        document.querySelector(`#R${round} #wcDefVER`).innerHTML = "Ja"
-        document.querySelector(`#R${round} #wcDefHAM`).innerHTML = "Nee"
+        document.querySelector(`#R${round} [data-ref="wcDefVER"]`).innerHTML = "Ja"
+        document.querySelector(`#R${round} [data-ref="wcDefHAM"]`).innerHTML = "Nee"
       } else if (wcPtsVER - wcPtsHAM < wcPointsDelta) {
-        document.querySelector(`#R${round} #wcDefVER`).innerHTML = "NTB"
-        document.querySelector(`#R${round} #wcDefHAM`).innerHTML = "NTB"
+        document.querySelector(`#R${round} [data-ref="wcDefVER"]`).innerHTML = "NTB"
+        document.querySelector(`#R${round} [data-ref="wcDefHAM"]`).innerHTML = "NTB"
       }
 
     })
