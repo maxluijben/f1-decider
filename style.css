@@ -51,6 +51,16 @@ select {
 }
 
 
+.material-icons-outlined {
+  font-size: 20px;
+}
+
+th .material-icons-outlined {
+  display: flex;
+}
+
+
+
 
 .f1-style-a .table {
   border-collapse: separate;
