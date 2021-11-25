@@ -97,6 +97,19 @@ class Stats {
       document.querySelector(`#round_${round} [data-ref="wcPtsVER"]`).innerHTML = wcPtsVER
       document.querySelector(`#round_${round} [data-ref="wcPtsHAM"]`).innerHTML = wcPtsHAM
       
+      // WC standings position 
+
+      if (wcPtsVER > wcPtsHAM) {
+        document.querySelector(`#round_${round} [data-ref="wcPosVER"]`).innerHTML = "1"
+        document.querySelector(`#round_${round} [data-ref="wcPosHAM"]`).innerHTML = "2"
+      } else if (wcPtsVER < wcPtsHAM) {
+        document.querySelector(`#round_${round} [data-ref="wcPosVER"]`).innerHTML = "2"
+        document.querySelector(`#round_${round} [data-ref="wcPosHAM"]`).innerHTML = "1"
+      } else if (wcPtsVER == wcPtsHAM) {
+        document.querySelector(`#round_${round} [data-ref="wcPosVER"]`).innerHTML = "1"
+        document.querySelector(`#round_${round} [data-ref="wcPosHAM"]`).innerHTML = "1"
+      }
+
 
       // WC decider
       const roundsLeft = rounds.length - round

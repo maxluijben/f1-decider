@@ -159,7 +159,7 @@ section.pattern-border {
   display: block;
   position: relative;
   background-color: #DFE2E6;
-  margin-inline-end: 5px;
+  margin-inline-end: 8px;
   align-self: center;
 }
 .driver-tag.team-redbull::before  { background-color: #0600EF; }
@@ -190,13 +190,20 @@ section.pattern-border {
   border-top: 1px solid #DFE2E6;
 }
 .wc-standings .wc-def-label {
-  margin-inline-end: 5px;
+  margin-inline-end: 4px;
 }
 .wc-standings .wc-standings {
   padding: 16px;
 }
 
-
+.wc-standings-position-container {
+  /* flex-direction: row; */
+  display: flex;
+}
+.wc-standings-position {
+  margin-inline-end: 8px;
+  font-weight: 700;
+}
 
 
 .text-muted {
