@@ -123,39 +123,6 @@ class Stats {
 
     })
 
-
-    // document.querySelector(`#R${this.thisRound} #racePtsVER`).innerHTML = this.racePtsVER
-    // document.querySelector(`#R${this.thisRound} #racePtsHAM`).innerHTML = this.racePtsHAM
-    
-    // document.querySelector(`#R${this.thisRound} #wcPtsVER`).innerHTML = this.newWcPtsVER
-    // document.querySelector(`#R${this.thisRound} #wcPtsHAM`).innerHTML = this.newWcPtsHAM
-
-    // Upcoming Round
-    // if (this.nextRound != '') {
-    //   document.querySelector(`#R${this.nextRound} #wcPtsVER`).innerHTML = this.newWcPtsVER
-    //   document.querySelector(`#R${this.nextRound} #wcPtsHAM`).innerHTML = this.newWcPtsHAM
-    // }
-
-    // if ((this.newWcPtsVER - this.newWcPtsHAM) >= 26) {
-    //   document.querySelector(`#R${this.thisRound} #wcDefVER`).innerHTML = "Ja"
-    //   document.querySelector(`#R${this.thisRound} #wcDefHAM`).innerHTML = "Nee"
-
-    //   // Upcoming Round
-    //   if (this.nextRound != '') {
-    //     document.querySelector(`#R${this.nextRound} #wcDefVER`).innerHTML = "Ja"
-    //     document.querySelector(`#R${this.nextRound} #wcDefHAM`).innerHTML = "Nee"
-    //   }
-
-    // } else if ((this.newWcPtsVER - this.newWcPtsHAM) < 26) {
-    //   document.querySelector(`#R${this.thisRound} #wcDefVER`).innerHTML = "Onbeslist"
-    //   document.querySelector(`#R${this.thisRound} #wcDefHAM`).innerHTML = "Onbeslist"
-
-    //   // Upcoming Round
-    //   if (this.nextRound != '') {
-    //     document.querySelector(`#R${this.nextRound} #wcDefVER`).innerHTML = "Onbeslist"
-    //     document.querySelector(`#R${this.nextRound} #wcDefHAM`).innerHTML = "Onbeslist"
-    //   }
-    // }
   }
 
 }
