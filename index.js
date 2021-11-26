@@ -233,6 +233,7 @@ for (i = 0; i < l; i++) {
     closeAllSelect(this);
     this.nextSibling.classList.toggle("select-hide");
     this.classList.toggle("select-arrow-active");
+    this.nextElementSibling.scrollIntoView({block: "nearest"})
   });
 }
 
