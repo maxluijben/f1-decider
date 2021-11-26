@@ -130,7 +130,7 @@ class Stats {
       } else if (wcPtsHAM - wcPtsVER >= wcPointsDelta) {
         document.querySelector(`#round_${round} [data-ref="wcDefVER"]`).innerHTML = "Nee"
         document.querySelector(`#round_${round} [data-ref="wcDefHAM"]`).innerHTML = "Ja"
-      } else if (wcPtsHAM - wcPtsVER == 0) {
+      } else if (wcPtsHAM - wcPtsVER == 0 && roundsLeft == 0) {
         document.querySelector(`#round_${round} [data-ref="wcDefVER"]`).innerHTML = "Ja"
         document.querySelector(`#round_${round} [data-ref="wcDefHAM"]`).innerHTML = "Nee"
       } else if (wcPtsVER - wcPtsHAM < wcPointsDelta) {
