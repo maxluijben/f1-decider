@@ -220,6 +220,7 @@ for (i = 0; i < l; i++) {
             break;
           }
         }
+        s.dispatchEvent(new Event('change', { bubbles: true }));
         h.click();
     });
     b.appendChild(c);
