@@ -10,17 +10,23 @@ body {
   max-width: 800px;
   margin: 0 auto;
   padding: 15px;
+  padding-top: 0;
 }
 
-@media screen and (min-width: 400px) {
-  body {
-    margin-top: 64px;
-  }
-}
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   margin-bottom: 1.5rem;
+}
+
+h1, .h1 {
+  font-size: calc(2rem + 2.5vw);
+  max-width: 80%;
+}
+
+h1 small {
+  font-size: .6em;
+  display: inline-block;
 }
 
 .lead {
@@ -51,6 +57,7 @@ select {
 
 .section-intro {
   margin-bottom: 5rem;
+  padding-top: 3rem;
 }
 
 
@@ -187,9 +194,17 @@ section.pattern-border {
 
 .wc-standings .wc-points {
   font-weight: 700;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
 }
+.wc-standings .wc-points-label {
+  line-height: 100%;
+}
+
 .wc-standings .wc-points-counter {
   font-size: 32px;
+  line-height: 83%;
 }
 .wc-standings .wc-def-container {
   font-weight: 600;
@@ -201,8 +216,8 @@ section.pattern-border {
   margin-inline-end: 4px;
 }
 .wc-standings .wc-standings {
-  padding: 16px;
-  padding-top: 0;
+  padding-bottom: 16px;
+  gap: 8px;
 }
 
 .wc-standings-position-container {
