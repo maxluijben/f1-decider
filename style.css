@@ -313,3 +313,9 @@ section.pattern-border {
   width: max-content;
   min-width: 100%;
 }
+
+
+.select-items .disabled {
+  opacity: .5;
+  pointer-events: none;
+}
