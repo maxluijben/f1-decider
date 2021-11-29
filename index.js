@@ -125,17 +125,25 @@ class Stats {
       console.log('required WC points delta', wcPointsDelta)
 
       if (wcPtsVER - wcPtsHAM >= wcPointsDelta) {
-        document.querySelector(`#round_${round} [data-ref="wcDefVER"]`).innerHTML = "Ja"
+        document.querySelector(`#round_${round} [data-ref="wcDefVER"]`).innerHTML = 'Ja<span class="trophy animation-bounce">🏆</span>'
+        document.querySelector(`#round_${round} [data-ref="wcDefVER"]`).classList.add('wc')
         document.querySelector(`#round_${round} [data-ref="wcDefHAM"]`).innerHTML = "Nee"
+        document.querySelector(`#round_${round} [data-ref="wcDefHAM"]`).classList.remove('wc')
       } else if (wcPtsHAM - wcPtsVER >= wcPointsDelta) {
         document.querySelector(`#round_${round} [data-ref="wcDefVER"]`).innerHTML = "Nee"
-        document.querySelector(`#round_${round} [data-ref="wcDefHAM"]`).innerHTML = "Ja"
+        document.querySelector(`#round_${round} [data-ref="wcDefVER"]`).classList.remove('wc')
+        document.querySelector(`#round_${round} [data-ref="wcDefHAM"]`).innerHTML = 'Ja<span class="trophy animation-bounce">🏆</span>'
+        document.querySelector(`#round_${round} [data-ref="wcDefHAM"]`).classList.add('wc')
       } else if (wcPtsHAM - wcPtsVER == 0 && roundsLeft == 0) {
-        document.querySelector(`#round_${round} [data-ref="wcDefVER"]`).innerHTML = "Ja"
+        document.querySelector(`#round_${round} [data-ref="wcDefVER"]`).innerHTML = 'Ja<span class="trophy animation-bounce">🏆</span>'
+        document.querySelector(`#round_${round} [data-ref="wcDefVER"]`).classList.add('wc')
         document.querySelector(`#round_${round} [data-ref="wcDefHAM"]`).innerHTML = "Nee"
+        document.querySelector(`#round_${round} [data-ref="wcDefHAM"]`).classList.remove('wc')
       } else if (wcPtsVER - wcPtsHAM < wcPointsDelta) {
         document.querySelector(`#round_${round} [data-ref="wcDefVER"]`).innerHTML = "NTB"
+        document.querySelector(`#round_${round} [data-ref="wcDefVER"]`).classList.remove('wc')
         document.querySelector(`#round_${round} [data-ref="wcDefHAM"]`).innerHTML = "NTB"
+        document.querySelector(`#round_${round} [data-ref="wcDefHAM"]`).classList.remove('wc')
       }
 
     })

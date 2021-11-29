@@ -334,3 +334,126 @@ section.pattern-border {
   opacity: .5;
   pointer-events: none;
 }
+
+
+
+
+
+
+
+/* Fireworks */
+/* https://codepen.io/vii120/pen/KKapaaY */
+
+:root {
+  --clr-01: #0600ef;
+  --clr-02: #ff0055;
+}
+
+
+.wc {
+  position: relative; /* Optional */
+}
+
+.wc::after,
+.wc::before {
+  content: '';
+  position: absolute;
+  width: 0.15rem;
+  height: 0.15rem;
+  border-radius: 50%;
+}
+
+.wc::before {
+  -webkit-animation: firework-md 1.2s both infinite;
+          animation: firework-md 1.2s both infinite;
+  -webkit-animation-delay: 1.7s;
+          animation-delay: 1.7s;
+  top: 25%;
+  left: 90%;
+}
+.wc::after {
+  -webkit-animation: firework-lg 1.2s both infinite;
+          animation: firework-lg 1.2s both infinite;
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+  top: 45%;
+  left: 60%;
+}
+
+
+@keyframes firework-md {
+  0%, 100% {
+    opacity: 0;
+  }
+  10%, 70% {
+    opacity: 1;
+  }
+  100% {
+    box-shadow: 
+    -0.7rem 0rem 0      var(--clr-01), 
+    0.7rem 0rem 0       var(--clr-01), 
+    0rem -0.7rem 0      var(--clr-01), 
+    0rem 0.7rem 0       var(--clr-01), 
+    0.49rem -0.49rem 0  var(--clr-01), 
+    0.49rem 0.49rem 0   var(--clr-01), 
+    -0.49rem -0.49rem 0 var(--clr-01), 
+    -0.49rem 0.49rem 0  var(--clr-01);
+  }
+}
+@keyframes firework-lg {
+  0%, 100% {
+    opacity: 0;
+  }
+  10%, 70% {
+    opacity: 1;
+  }
+  100% {
+    box-shadow: 
+      -0.9rem 0rem 0      var(--clr-02), 
+      0.9rem 0rem 0       var(--clr-02), 
+      0rem -0.9rem 0      var(--clr-02), 
+      0rem 0.9rem 0       var(--clr-02), 
+      0.63rem -0.63rem 0  var(--clr-02), 
+      0.63rem 0.63rem 0   var(--clr-02), 
+      -0.63rem -0.63rem 0 var(--clr-02), 
+      -0.63rem 0.63rem 0  var(--clr-02);
+  }
+}
+
+
+
+/* Jumping trophy */
+/* https://css-tricks.com/making-css-animations-feel-natural/ */
+.wc-standings .wc-def-container {
+    display: flex;
+}
+
+.wc {
+  display: flex;
+  height: auto;
+  width: auto;
+}
+.trophy {
+  font-weight: normal;
+  align-self: flex-end;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  background-color: transparent;
+  height: auto;
+  margin: 0 auto 0 auto;
+  transform-origin: bottom;
+  width: 100%;
+}
+.animation-bounce {
+    animation-name: bounce;
+    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+}
+@keyframes bounce {
+    0%   { transform: scale(1,1)      translateY(0); }
+    10%  { transform: scale(1.1,.9)   translateY(0); }
+    30%  { transform: scale(.9,1.1)   translateY(-10px); }
+    50%  { transform: scale(1.05,.95) translateY(0); }
+    57%  { transform: scale(1,1)      translateY(-0.7px); }
+    64%  { transform: scale(1,1)      translateY(0); }
+    100% { transform: scale(1,1)      translateY(0); }
+}
